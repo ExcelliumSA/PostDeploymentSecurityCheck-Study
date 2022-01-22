@@ -1,0 +1,26 @@
+{
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "NodeJS sample application against all post deployment validation are applied",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExcelliumSA/PostDeploymentSecurityCheck-Study.git"
+  },
+  "keywords": [
+    "security",
+    "validation",
+    "web",
+    "deployment"
+  ],
+  "author": "Excellium Services SA",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/ExcelliumSA/PostDeploymentSecurityCheck-Study/issues"
+  },
+  "homepage": "https://github.com/ExcelliumSA/PostDeploymentSecurityCheck-Study",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
