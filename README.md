@@ -1,5 +1,7 @@
 # PostDeploymentSecurityCheck-Study
 
+[![Deploy app to Heroku](https://github.com/ExcelliumSA/PostDeploymentSecurityCheck-Study/actions/workflows/deployment.yml/badge.svg?branch=main)](https://github.com/ExcelliumSA/PostDeploymentSecurityCheck-Study/actions/workflows/deployment.yml)
+
 Contains the materials used for the blog post about possible validation after a web app deployment.
 
 # Status
