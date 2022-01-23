@@ -17,3 +17,6 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           appdir: app
           healthcheck: ${{secrets.HEROKU_APP_BASE_URL}}
+      - name: Post deployment validations
+        run: |
+          bash validate.sh "${{secrets.HEROKU_APP_BASE_URL}}"
