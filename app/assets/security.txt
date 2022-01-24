@@ -1,0 +1,28 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+Contact: https://excellium-services.com/emergency-service/
+Contact: mailto:emergency@excellium-services.com
+Contact: tel:+35226203964707
+Encryption: https://excellium-services.com/assets/EMERGENCY_PKEY.asc
+Preferred-Languages: en, fr
+Canonical: https://excellium-services.com/.well-known/security.txt
+Policy: https://excellium-services.com/assets/csirt-rfc2350.pdf
+Hiring: https://excellium-services.com/career-opportunities/
+-----BEGIN PGP SIGNATURE-----
+
+iQJVBAEBCAA/FiEE6n9iwyqtcvwKEOyb2MKUd4kiduEFAmDaxF8hHGVtZXJnZW5j
+eUBleGNlbGxpdW0tc2VydmljZXMuY29tAAoJENjClHeJInbhCJAP+gLa+Cs2IPUd
+56Xs8Eh15OldXQGRC9F4Bc+FmtKQHTuDyz6gLnIJyrScKmGmFvxJCbMOUcvwMmuW
+WrkSjwgUtThVhBtbUcrPUqotCgzfwvoyy8pkSUfzEo/v6d7ZjsX0cPmJ2k5wq/L3
+oXuyJUYtHopwkm451K48LXBT75qXV2A3M5pEa6IBmRtZ+hqm555qQl8L+nZ01uN+
+/7DrvZwKUhQoHxF0PbS3xMdiB4AR4R4y2gHCpE7pAHTP5/VgGj6VupkraCQ50IRo
+BZKxEE9K5qFWgeC3nXnwsvAttfbDHFSKBzfPn3rjuiTjXp/z0S/uuV2rH2+o4I/L
+XCSsKRGL5pDytw+vIKjujnoY3b5GfuGGNsLdc1x6m3acDt3C4cDq52tx/TzYr+tF
+OvzzgX6dBYeI5VY6udnMtwl+SsHqj1ukn2ZsPEEVsk8eDftqxjt3nM7/QGjX+s//
+I+cG1uTaJ79hRSAJv/LU2TD1Ti+en9GzRYVxpPy3Qbt3bWb5veEZT5Wxg4y3/1Mf
+Mh2XBQWiEAlgSHm941G+uyQr0ar4OH5JAFlbphfIeHcnepjOQuToUrEjGrJ4DoXn
+kAZmrJUxZrK95DaH4mP2pkk1OEdJ1XrVPHhvbjs/bo0+gZ/oGQXVurTicBC0EcrA
+mcaFWlSXAFg/x9FTIn7AB2VN8FLdxZPi
+=MOOX
+-----END PGP SIGNATURE-----
