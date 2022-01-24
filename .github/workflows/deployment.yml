@@ -18,7 +18,7 @@ jobs:
           appdir: app
           healthcheck: ${{secrets.HEROKU_APP_BASE_URL}}
       - name: Install deployment validations dependencies
-        run: sudo apt -y install aha
+        run: sudo apt -y install aha curl wget golang jq git
       - name: Post deployment validations
         run: |
           bash validate.sh "${{secrets.HEROKU_APP_BASE_URL}}" | aha > docs/index.html

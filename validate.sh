@@ -1,8 +1,6 @@
 #!/bin/bash
 # Prevent any debugging call to see the web hook url
 set +x
-# Install global needed tools
-sudo apt install -q -y curl wget golang jq git
 # Quick startup check
 USER_AGENT="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:96.0)"
 APP_BASE_URL=$1

@@ -1,3 +1,3 @@
-assets/deploy.key
+deploy.key
 package.json
 package-lock.json
