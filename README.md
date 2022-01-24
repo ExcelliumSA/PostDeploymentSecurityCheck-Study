@@ -14,4 +14,18 @@ TODO
 
 # Lab
 
-The folder **app** contain the NodeJS sample application against all post deployment validation are applied.
+The folder **app** contain the NodeJS sample application against all post-deployment validation are applied.
+
+Use the command below to start the app:
+
+```bash
+$ cd app
+$ npm start
+Listening on 5000
+...
+```
+
+# Other folders
+
+* **docs**: Contain an example of HTML report of the validations for the sample application.
+* **post**: Contain pictures used for the blog post.

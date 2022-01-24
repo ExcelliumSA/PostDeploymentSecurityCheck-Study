@@ -81,7 +81,7 @@ validate_exposed_content () {
 }
 
 validate_securitytxt_file_presence () {
-    $file_is_present=$(curl -L -sk $APP_BASE_URL/.well-known/security.txt | grep -iFc "mailto:emergency@excellium-services.com")
+    file_is_present=$(curl -L -sk $APP_BASE_URL/security.txt | grep -iFc "mailto:emergency@excellium-services.com")
     echo "File is present (0 = no): $file_is_present"
     if [ $file_is_present -eq 0 ];
     then
@@ -106,15 +106,15 @@ failure=0
 ## Execute all validation functions
 security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence")
 for security_function in ${security_functions[@]}; do
-    echo "[+] Execute '$security_function'"
+    echo -e "\e[94m[+] Execute '$security_function'\e[0m"
     $security_function
     failure=$((failure + $?))  
 done
 ## Final cleanup
-echo "[+] Cleanup"
+echo -e "\e[94m[+] Cleanup\e[0m"
 cleanup
 # Final result code indicating the validate state
-echo "[+] RC"
+echo -e "\e[94m[+] RC\e[0m"
 echo $failure
 
 
