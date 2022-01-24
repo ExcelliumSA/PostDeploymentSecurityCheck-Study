@@ -8,78 +8,6 @@
 </head>
 <body>
 <pre>
-Reading package lists...
-Building dependency tree...
-Reading state information...
-curl is already the newest version (7.68.0-1ubuntu2.7).
-wget is already the newest version (1.20.3-1ubuntu2).
-jq is already the newest version (1.6-1ubuntu0.20.04.1).
-git is already the newest version (1:2.34.1-0ppa1~ubuntu20.04.1).
-The following additional packages will be installed:
-  golang-1.13 golang-1.13-doc golang-1.13-go golang-1.13-race-detector-runtime
-  golang-1.13-src golang-doc golang-go golang-race-detector-runtime golang-src
-Suggested packages:
-  bzr | brz
-The following NEW packages will be installed:
-  golang golang-1.13 golang-1.13-doc golang-1.13-go
-  golang-1.13-race-detector-runtime golang-1.13-src golang-doc golang-go
-  golang-race-detector-runtime golang-src
-0 upgraded, 10 newly installed, 0 to remove and 17 not upgraded.
-Need to get 63.5 MB of archives.
-After this operation, 329 MB of additional disk space will be used.
-Get:1 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-1.13-src amd64 1.13.8-1ubuntu1 [12.6 MB]
-Get:2 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-1.13-go amd64 1.13.8-1ubuntu1 [47.6 MB]
-Get:3 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-1.13-doc all 1.13.8-1ubuntu1 [2525 kB]
-Get:4 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-1.13 all 1.13.8-1ubuntu1 [11.2 kB]
-Get:5 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-src amd64 2:1.13~1ubuntu2 [4044 B]
-Get:6 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-go amd64 2:1.13~1ubuntu2 [22.0 kB]
-Get:7 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-doc all 2:1.13~1ubuntu2 [2948 B]
-Get:8 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang amd64 2:1.13~1ubuntu2 [2900 B]
-Get:9 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-1.13-race-detector-runtime amd64 0.0+svn332029-0ubuntu2 [713 kB]
-Get:10 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 golang-race-detector-runtime amd64 2:1.13~1ubuntu2 [3836 B]
-Fetched 63.5 MB in 3s (24.5 MB/s)
-Selecting previously unselected package golang-1.13-src.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 236854 files and directories currently installed.)
-Preparing to unpack .../0-golang-1.13-src_1.13.8-1ubuntu1_amd64.deb ...
-Unpacking golang-1.13-src (1.13.8-1ubuntu1) ...
-Selecting previously unselected package golang-1.13-go.
-Preparing to unpack .../1-golang-1.13-go_1.13.8-1ubuntu1_amd64.deb ...
-Unpacking golang-1.13-go (1.13.8-1ubuntu1) ...
-Selecting previously unselected package golang-1.13-doc.
-Preparing to unpack .../2-golang-1.13-doc_1.13.8-1ubuntu1_all.deb ...
-Unpacking golang-1.13-doc (1.13.8-1ubuntu1) ...
-Selecting previously unselected package golang-1.13.
-Preparing to unpack .../3-golang-1.13_1.13.8-1ubuntu1_all.deb ...
-Unpacking golang-1.13 (1.13.8-1ubuntu1) ...
-Selecting previously unselected package golang-src.
-Preparing to unpack .../4-golang-src_2%3a1.13~1ubuntu2_amd64.deb ...
-Unpacking golang-src (2:1.13~1ubuntu2) ...
-Selecting previously unselected package golang-go.
-Preparing to unpack .../5-golang-go_2%3a1.13~1ubuntu2_amd64.deb ...
-Unpacking golang-go (2:1.13~1ubuntu2) ...
-Selecting previously unselected package golang-doc.
-Preparing to unpack .../6-golang-doc_2%3a1.13~1ubuntu2_all.deb ...
-Unpacking golang-doc (2:1.13~1ubuntu2) ...
-Selecting previously unselected package golang.
-Preparing to unpack .../7-golang_2%3a1.13~1ubuntu2_amd64.deb ...
-Unpacking golang (2:1.13~1ubuntu2) ...
-Selecting previously unselected package golang-1.13-race-detector-runtime.
-Preparing to unpack .../8-golang-1.13-race-detector-runtime_0.0+svn332029-0ubuntu2_amd64.deb ...
-Unpacking golang-1.13-race-detector-runtime (0.0+svn332029-0ubuntu2) ...
-Selecting previously unselected package golang-race-detector-runtime.
-Preparing to unpack .../9-golang-race-detector-runtime_2%3a1.13~1ubuntu2_amd64.deb ...
-Unpacking golang-race-detector-runtime (2:1.13~1ubuntu2) ...
-Setting up golang-1.13-src (1.13.8-1ubuntu1) ...
-Setting up golang-1.13-race-detector-runtime (0.0+svn332029-0ubuntu2) ...
-Setting up golang-1.13-go (1.13.8-1ubuntu1) ...
-Setting up golang-src (2:1.13~1ubuntu2) ...
-Setting up golang-race-detector-runtime (2:1.13~1ubuntu2) ...
-Setting up golang-go (2:1.13~1ubuntu2) ...
-Setting up golang-1.13-doc (1.13.8-1ubuntu1) ...
-Setting up golang-1.13 (1.13.8-1ubuntu1) ...
-Setting up golang-doc (2:1.13~1ubuntu2) ...
-Setting up golang (2:1.13~1ubuntu2) ...
-Processing triggers for man-db (2.9.1-1) ...
 [+] Execute 'validate_http_security_response_headers'
  • HTTP security response headers test suites (/tmp/venom_security_headers_tests_suite.yml)
  	• Strict-Transport-Security FAILURE
@@ -139,66 +67,9 @@ Testcase &quot;X-Xss-Protection&quot;, step #0: Assertion &quot;result.headers.x
 Permanent redirection to a HTTPS protocol is NOT in place.
 [+] Execute 'validate_tls_configuration'
 
-<span style="font-weight:bold;">Testing all IPv4 addresses (port 443): </span>54.220.192.176 54.73.53.134 46.137.15.86
+<span style="font-weight:bold;">Testing all IPv4 addresses (port 443): </span>54.73.53.134 46.137.15.86 54.220.192.176
 -----------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-24 15:23:02        --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
-
- Further IP addresses:   54.73.53.134 46.137.15.86 
- rDNS (54.220.192.176):  ec2-54-220-192-176.eu-west-1.compute.amazonaws.com.
- Service detected:       HTTP
-
-
-<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing protocols </span><span style="text-decoration:underline;">via sockets except NPN+ALPN </span>
-
-<span style="font-weight:bold;"> SSLv2      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> SSLv3      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> TLS 1      </span>not offered
-<span style="font-weight:bold;"> TLS 1.1    </span>not offered
-<span style="font-weight:bold;"> TLS 1.2    </span><span style="font-weight:bold;color:green;">offered (OK)</span>
-<span style="font-weight:bold;"> TLS 1.3    </span>not offered and downgraded to a weaker protocol
-<span style="font-weight:bold;"> NPN/SPDY   </span>not offered
-<span style="font-weight:bold;"> ALPN/HTTP2 </span>not offered
-
-<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing cipher categories </span>
-
-<span style="font-weight:bold;"> NULL ciphers (no encryption)                      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> Anonymous NULL Ciphers (no authentication)        </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> Export ciphers (w/o ADH+NULL)                     </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> LOW: 64 Bit + DES, RC[2,4], MD5 (w/o export)      </span><span style="color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> Triple DES Ciphers / IDEA                         </span>not offered
-<span style="font-weight:bold;"> Obsoleted CBC ciphers (AES, ARIA etc.)            </span><span style="font-weight:bold;color:olive;">offered</span>
-<span style="font-weight:bold;"> Strong encryption (AEAD ciphers) with no FS       </span><span style="color:green;">offered (OK)</span>
-<span style="font-weight:bold;"> Forward Secrecy strong encryption (AEAD ciphers)  </span><span style="font-weight:bold;color:green;">offered (OK)</span>
-
-
-<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing vulnerabilities </span>
-
-<span style="font-weight:bold;"> Heartbleed</span> (CVE-2014-0160)                <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no heartbeat extension
-<span style="font-weight:bold;"> CCS</span> (CVE-2014-0224)                       <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> Ticketbleed</span> (CVE-2016-9244), experiment.  <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, reply empty
-<span style="font-weight:bold;"> ROBOT                                     </span><span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> Secure Renegotiation (RFC 5746)           </span><span style="font-weight:bold;color:green;">supported (OK)</span>
-<span style="font-weight:bold;"> Secure Client-Initiated Renegotiation     </span><span style="color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> CRIME, TLS </span>(CVE-2012-4929)                <span style="color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> BREACH</span> (CVE-2013-3587)                    <span style="color:green;">no gzip/deflate/compress/br HTTP compression (OK) </span> - only supplied &quot;/&quot; tested
-<span style="font-weight:bold;"> POODLE, SSL</span> (CVE-2014-3566)               <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no SSLv3 support
-<span style="font-weight:bold;"> TLS_FALLBACK_SCSV</span> (RFC 7507)              <span style="color:green;">No fallback possible (OK)</span>, no protocol below TLS 1.2 offered
-<span style="font-weight:bold;"> SWEET32</span> (CVE-2016-2183, CVE-2016-6329)    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> FREAK</span> (CVE-2015-0204)                     <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> DROWN</span> (CVE-2016-0800, CVE-2016-0703)      <span style="font-weight:bold;color:green;">not vulnerable on this host and port (OK)</span>
-                                           make sure you don't use this certificate elsewhere with SSLv2 enabled services
-                                           https://censys.io/ipv4?q=968E97A3C84D9007C9D14F037F84EE527802F36324A73D985B5AB8C738A3899E could help you to find out
-<span style="font-weight:bold;"> LOGJAM</span> (CVE-2015-4000), experimental      <span style="color:green;">not vulnerable (OK):</span> no DH EXPORT ciphers, no DH key detected with &lt;= TLS 1.2
-<span style="font-weight:bold;"> BEAST</span> (CVE-2011-3389)                     <span style="color:green;">not vulnerable (OK)</span>, no SSL3 or TLS1
-<span style="font-weight:bold;"> LUCKY13</span> (CVE-2013-0169), experimental     potentially <span style="font-weight:bold;color:olive;">VULNERABLE</span>, uses cipher block chaining (CBC) ciphers with TLS. Check patches
-<span style="font-weight:bold;"> Winshock</span> (CVE-2014-6321), experimental    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span> - CAMELLIA or ECDHE_RSA GCM ciphers found
-<span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
-
-
-<span style="color:white;background-color:black;"> Done 2022-01-24 15:24:40 [ 101s] --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
-
------------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-24 15:24:40        --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2022-01-24 15:36:38        --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
  Further IP addresses:   54.220.192.176 46.137.15.86 
  rDNS (54.73.53.134):    ec2-54-73-53-134.eu-west-1.compute.amazonaws.com.
@@ -252,10 +123,10 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
 
 
-<span style="color:white;background-color:black;"> Done 2022-01-24 15:26:19 [ 200s] --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2022-01-24 15:37:23 [  47s] --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
 -----------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-24 15:26:19        --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2022-01-24 15:37:23        --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
  Further IP addresses:   54.220.192.176 54.73.53.134 
  rDNS (46.137.15.86):    ec2-46-137-15-86.eu-west-1.compute.amazonaws.com.
@@ -309,20 +180,78 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
 
 
-<span style="color:white;background-color:black;"> Done 2022-01-24 15:27:59 [ 300s] --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2022-01-24 15:38:10 [  94s] --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
 -----------------------------------------------------
-<span style="font-weight:bold;">Done testing now all IP addresses (on port 443): </span>54.220.192.176 54.73.53.134 46.137.15.86
+<span style="color:white;background-color:black;"> Start 2022-01-24 15:38:10        --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+
+ Further IP addresses:   46.137.15.86 54.73.53.134 
+ rDNS (54.220.192.176):  ec2-54-220-192-176.eu-west-1.compute.amazonaws.com.
+ Service detected:       HTTP
+
+
+<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing protocols </span><span style="text-decoration:underline;">via sockets except NPN+ALPN </span>
+
+<span style="font-weight:bold;"> SSLv2      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> SSLv3      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> TLS 1      </span>not offered
+<span style="font-weight:bold;"> TLS 1.1    </span>not offered
+<span style="font-weight:bold;"> TLS 1.2    </span><span style="font-weight:bold;color:green;">offered (OK)</span>
+<span style="font-weight:bold;"> TLS 1.3    </span>not offered and downgraded to a weaker protocol
+<span style="font-weight:bold;"> NPN/SPDY   </span>not offered
+<span style="font-weight:bold;"> ALPN/HTTP2 </span>not offered
+
+<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing cipher categories </span>
+
+<span style="font-weight:bold;"> NULL ciphers (no encryption)                      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> Anonymous NULL Ciphers (no authentication)        </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> Export ciphers (w/o ADH+NULL)                     </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> LOW: 64 Bit + DES, RC[2,4], MD5 (w/o export)      </span><span style="color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> Triple DES Ciphers / IDEA                         </span>not offered
+<span style="font-weight:bold;"> Obsoleted CBC ciphers (AES, ARIA etc.)            </span><span style="font-weight:bold;color:olive;">offered</span>
+<span style="font-weight:bold;"> Strong encryption (AEAD ciphers) with no FS       </span><span style="color:green;">offered (OK)</span>
+<span style="font-weight:bold;"> Forward Secrecy strong encryption (AEAD ciphers)  </span><span style="font-weight:bold;color:green;">offered (OK)</span>
+
+
+<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing vulnerabilities </span>
+
+<span style="font-weight:bold;"> Heartbleed</span> (CVE-2014-0160)                <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no heartbeat extension
+<span style="font-weight:bold;"> CCS</span> (CVE-2014-0224)                       <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> Ticketbleed</span> (CVE-2016-9244), experiment.  <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, reply empty
+<span style="font-weight:bold;"> ROBOT                                     </span><span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> Secure Renegotiation (RFC 5746)           </span><span style="font-weight:bold;color:green;">supported (OK)</span>
+<span style="font-weight:bold;"> Secure Client-Initiated Renegotiation     </span><span style="color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> CRIME, TLS </span>(CVE-2012-4929)                <span style="color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> BREACH</span> (CVE-2013-3587)                    <span style="color:green;">no gzip/deflate/compress/br HTTP compression (OK) </span> - only supplied &quot;/&quot; tested
+<span style="font-weight:bold;"> POODLE, SSL</span> (CVE-2014-3566)               <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no SSLv3 support
+<span style="font-weight:bold;"> TLS_FALLBACK_SCSV</span> (RFC 7507)              <span style="color:green;">No fallback possible (OK)</span>, no protocol below TLS 1.2 offered
+<span style="font-weight:bold;"> SWEET32</span> (CVE-2016-2183, CVE-2016-6329)    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> FREAK</span> (CVE-2015-0204)                     <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> DROWN</span> (CVE-2016-0800, CVE-2016-0703)      <span style="font-weight:bold;color:green;">not vulnerable on this host and port (OK)</span>
+                                           make sure you don't use this certificate elsewhere with SSLv2 enabled services
+                                           https://censys.io/ipv4?q=968E97A3C84D9007C9D14F037F84EE527802F36324A73D985B5AB8C738A3899E could help you to find out
+<span style="font-weight:bold;"> LOGJAM</span> (CVE-2015-4000), experimental      <span style="color:green;">not vulnerable (OK):</span> no DH EXPORT ciphers, no DH key detected with &lt;= TLS 1.2
+<span style="font-weight:bold;"> BEAST</span> (CVE-2011-3389)                     <span style="color:green;">not vulnerable (OK)</span>, no SSL3 or TLS1
+<span style="font-weight:bold;"> LUCKY13</span> (CVE-2013-0169), experimental     potentially <span style="font-weight:bold;color:olive;">VULNERABLE</span>, uses cipher block chaining (CBC) ciphers with TLS. Check patches
+<span style="font-weight:bold;"> Winshock</span> (CVE-2014-6321), experimental    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span> - CAMELLIA or ECDHE_RSA GCM ciphers found
+<span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
+
+
+<span style="color:white;background-color:black;"> Done 2022-01-24 15:38:58 [ 142s] --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+
+-----------------------------------------------------
+<span style="font-weight:bold;">Done testing now all IP addresses (on port 443): </span>54.73.53.134 46.137.15.86 54.220.192.176
 
 6 issue(s) found.
 [+] Execute 'validate_exposed_content'
 /home/runner/work/PostDeploymentSecurityCheck-Study/PostDeploymentSecurityCheck-Study
-0 excluded item(s) found.
+deploy.key              [Status: 200, Size: 1674, Words: 7, Lines: 27]
+1 excluded item(s) found.
 Expression framework usage disclosed (0 = no): 1
 Error handling misconfiguration (0 = no): 0
 [+] Cleanup
 [+] RC
-10
+11
 </pre>
 </body>
 </html>
