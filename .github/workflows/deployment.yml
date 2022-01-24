@@ -9,8 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12
+      - name: Checkout project source code
+        uses: actions/checkout@v2
+      - name: Deploy app to Heroku platform
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
@@ -19,10 +21,10 @@ jobs:
           healthcheck: ${{secrets.HEROKU_APP_BASE_URL}}
       - name: Install deployment validations dependencies
         run: sudo apt -y install aha curl wget python3 jq git
-      - name: Post deployment validations
+      - name: Apply post deployment validations
         run: |
           bash validate.sh "${{secrets.HEROKU_APP_BASE_URL}}" | aha > docs/index.html
       - name: Set up Git user
         run: git config --global user.email "gha@github.com"; git config --global user.name "GHActionBot"
-      - name: Commit report update
+      - name: Commit validations report update
         run: git commit -m "Sync validation html report" docs/index.html; git push
