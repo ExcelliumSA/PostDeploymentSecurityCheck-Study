@@ -1,3 +1,4 @@
 *.log
 *.tmp
+report.html
 app/node_modules/

@@ -17,6 +17,12 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           appdir: app
           healthcheck: ${{secrets.HEROKU_APP_BASE_URL}}
+      - name: Install deployment validations dependencies
+        run: sudo apt -y install aha
       - name: Post deployment validations
         run: |
-          bash validate.sh "${{secrets.HEROKU_APP_BASE_URL}}"
+          bash validate.sh "${{secrets.HEROKU_APP_BASE_URL}}" | aha > docs/index.html
+      - name: Set up Git user
+        run: git config --global user.email "gha@github.com"; git config --global user.name "GHActionBot"
+      - name: Commit report update
+        run: git commit -m "Sync validation html report" docs/index.html; git push
