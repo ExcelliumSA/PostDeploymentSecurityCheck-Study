@@ -73,17 +73,17 @@ validate_exposed_content () {
     echo "$excluded_item_found excluded item(s) found."
     issue_count=$((issue_count + $excluded_item_found))
     # Search for different kind of information disclosure
-    express_framework_usage_disclosed=$(curl -A $USER_AGENT -skI $APP_BASE_URL | grep -ic "X-Powered-By: Express")
+    express_framework_usage_disclosed=$(curl -A "$USER_AGENT" -skI $APP_BASE_URL | grep -ic "X-Powered-By: Express")
     echo "Expression framework usage disclosed (0 = no): $express_framework_usage_disclosed"
     issue_count=$((issue_count + $express_framework_usage_disclosed))
-    error_handling_misconfiguration=$(curl -A $USER_AGENT -skI $APP_BASE_URL/hello | grep -ic "SendStream\.emit")
+    error_handling_misconfiguration=$(curl -A "$USER_AGENT" -skI $APP_BASE_URL/hello | grep -ic "SendStream\.emit")
     echo "Error handling misconfiguration (0 = no): $error_handling_misconfiguration"
     issue_count=$((issue_count + $error_handling_misconfiguration))
     return $issue_count
 }
 
 validate_securitytxt_file_presence () {
-    file_is_present=$(curl -L -sk $APP_BASE_URL/security.txt | grep -iFc "mailto:emergency@excellium-services.com")
+    file_is_present=$(curl -A "$USER_AGENT" -L -sk $APP_BASE_URL/security.txt | grep -iFc "mailto:emergency@excellium-services.com")
     echo "File is present (0 = no): $file_is_present"
     if [ $file_is_present -eq 0 ];
     then
