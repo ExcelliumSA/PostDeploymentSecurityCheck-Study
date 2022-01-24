@@ -76,6 +76,7 @@ validate_exposed_content () {
     express_framework_usage_disclosed=$(curl -A "$USER_AGENT" -skI $APP_BASE_URL | grep -ic "X-Powered-By: Express")
     echo "NodeJS Express framework usage disclosed (0 = no): $express_framework_usage_disclosed"
     issue_count=$((issue_count + $express_framework_usage_disclosed))
+    # For this test, we call the app with a request that is expected to cause an error (here a HTTP parameter is missing)
     error_handling_misconfiguration=$(curl -A "$USER_AGENT" -skI $APP_BASE_URL/hello | grep -ic "SendStream\.emit")
     echo "Error handling misconfiguration (0 = no): $error_handling_misconfiguration"
     issue_count=$((issue_count + $error_handling_misconfiguration))
