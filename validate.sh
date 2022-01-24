@@ -1,4 +1,6 @@
 #!/bin/bash
+# Print a global state and fail only at the end
+failure=0
 # Prevent any debugging call to see the web hook url
 set +x
 # Quick startup check
@@ -100,22 +102,25 @@ cleanup () {
 }
 
 
-# Main processing
-## Print a global state and fail only at the end
-failure=0
-## Execute all validation functions
+# Main processing - Execute all validation functions in sequence
 security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence")
 for security_function in ${security_functions[@]}; do
     echo -e "\e[94m[+] Execute '$security_function'\e[0m"
     $security_function
     failure=$((failure + $?))  
 done
-## Final cleanup
+# Final cleanup
 echo -e "\e[94m[+] Cleanup\e[0m"
 cleanup
-# Final result code indicating the validate state
-echo -e "\e[94m[+] RC\e[0m"
-echo $failure
+# Final result code indicating the validation state
+echo -e "\e[94m[+] Global status - RC: $failure\e[0m"
+if [ $failure -eq 0 ];
+then
+  echo -e "\e[92m[V] No issue found\e[0m"  
+else
+  echo -e "\e[91m[!] Issue found\e[0m"    
+fi
+#exit $failure
 
 
 
