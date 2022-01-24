@@ -74,7 +74,7 @@ validate_exposed_content () {
     issue_count=$((issue_count + $excluded_item_found))
     # Search for different kind of information disclosure
     express_framework_usage_disclosed=$(curl -A "$USER_AGENT" -skI $APP_BASE_URL | grep -ic "X-Powered-By: Express")
-    echo "Expression framework usage disclosed (0 = no): $express_framework_usage_disclosed"
+    echo "NodeJS Express framework usage disclosed (0 = no): $express_framework_usage_disclosed"
     issue_count=$((issue_count + $express_framework_usage_disclosed))
     error_handling_misconfiguration=$(curl -A "$USER_AGENT" -skI $APP_BASE_URL/hello | grep -ic "SendStream\.emit")
     echo "Error handling misconfiguration (0 = no): $error_handling_misconfiguration"
@@ -93,17 +93,28 @@ validate_securitytxt_file_presence () {
     fi
 }
 
+validate_waf_presence () {
+    # Install tools
+    git clone --depth 1 https://github.com/stamparm/identYwaf.git /tmp/identYwaf
+    chmod +x -R /tmp/identYwaf
+    # Run the tool against the app    
+    waf_is_present=$(python3 /tmp/identYwaf/identYwaf.py $APP_BASE_URL | grep -ic "does not seem to be protected")
+    echo "WAF is present (1 = no): $waf_is_present"
+    return $waf_is_present
+}
+
 cleanup () {
     rm /tmp/venom* 2>/dev/null
     rm /tmp/buffer.txt 2>/dev/null
     rm -rf /tmp/testssl 2>/dev/null
     rm /tmp/testssl.json 2>/dev/null
     rm /tmp/ffuf* 2>/dev/null
+    rm -rf /tmp/identYwaf 2>/dev/null
 }
 
 
 # Main processing - Execute all validation functions in sequence
-security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence")
+security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence" "validate_waf_presence")
 for security_function in ${security_functions[@]}; do
     echo -e "\e[94m[+] Execute '$security_function'\e[0m"
     $security_function
