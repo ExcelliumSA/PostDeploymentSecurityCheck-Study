@@ -81,4 +81,14 @@ testcases:
       assertions:
         - result.statuscode ShouldEqual 301
         - result.headers.location ShouldNotBeNil
-        - result.headers.location ShouldContainSubstring {{.target_site}}         
+        - result.headers.location ShouldContainSubstring {{.target_site}}
+- name: Validate-RobotsTXT-File-Content
+  steps:     
+    - type: http
+      method: GET
+      url: {{.target_site}}/robots.txt
+      skip_body: false
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 200
+        - result.body ShouldNotContainSubstring "Disallow:"              
