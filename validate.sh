@@ -104,6 +104,12 @@ validate_waf_presence () {
     return $waf_is_present
 }
 
+validate_robotstxt_file_content () {
+    disallow_clauses=$(curl -A "$USER_AGENT" -L -sk $APP_BASE_URL/robots.txt | grep -iFc "Disallow:")
+    echo "Disallow clause present $disallow_clauses times"
+    return $disallow_clauses
+}
+
 cleanup () {
     rm /tmp/venom* 2>/dev/null
     rm /tmp/buffer.txt 2>/dev/null
@@ -115,7 +121,7 @@ cleanup () {
 
 
 # Main processing - Execute all validation functions in sequence
-security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence" "validate_waf_presence")
+security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence" "validate_waf_presence" "validate_robotstxt_file_content")
 for security_function in ${security_functions[@]}; do
     echo -e "\e[94m[+] Execute '$security_function'\e[0m"
     $security_function
