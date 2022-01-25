@@ -25,7 +25,10 @@ Listening on 5000
 ...
 ```
 
-# Other folders
+# Other folders and files
 
-* **docs**: Contain an example of HTML report of the validations for the sample application.
-* **post**: Contain pictures used for the blog post.
+* Folder [docs](docs): Contain an example of HTML report of the validations for the sample application.
+* Filder [post](post): Contain pictures used for the blog post.
+* File [validate.sh](validate.sh): Shell script of a POC containing all post deployment security validations proposed in the blog post. It is executed by this [workflow](.github/workflows/deployment.yml).
+* File [recipe.yml](recipe.yml): [venom](https://github.com/ovh/venom) test plan to demonstrate a migration from a shell script to a descriptive test plan of the shell script above.
+* File [content_excluded_from_deployment.txt](content_excluded_from_deployment.txt): Dictionary of file not expected to be present on the deployed application and used by [validate.sh](validate.sh) shell script.
