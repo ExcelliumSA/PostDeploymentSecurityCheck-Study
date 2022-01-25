@@ -1,0 +1,84 @@
+name: Post deployment security validations
+# Test plan (collection of test cases) to apply security validations after the deployment of an web application.
+# RUN CMD: venom run --var="target_site=https://myapp.com" recipe.yml
+vars:
+  target_site: "https://xlm-blogpost-deploy-check.herokuapp.com"
+  connection_timeout: 20
+testcases:
+- name: Validate-Exposed-Content-NodeJS-Express-Usage-Exposure
+  steps:
+    - type: http
+      method: GET
+      url: {{.target_site}}
+      skip_body: true
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 200
+        - result.headers.x-powered-by ShouldBeNil
+- name: Validate-Exposed-Content-Info-Disclosure-Via-Error   
+  steps:     
+    - type: http
+      method: GET
+      # Target a service in a way that an error is expected to occur (here a parameter is missing)
+      url: {{.target_site}}/hello
+      skip_body: false
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 500
+        - result.body ShouldNotContainSubstring SendStream.emit       
+- name: Validate-Exposed-Content-Non-Expected-File-Deployed   
+  steps:     
+    # Cf https://github.com/ovh/venom/blob/master/tests/ranged.yml
+    # Cf https://github.com/ovh/venom/issues/494      
+    - type: http         
+      method: GET
+      url: {{.target_site}}/deploy.key
+      skip_body: true
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 404
+    - type: http
+      method: GET
+      url: {{.target_site}}/package.json
+      skip_body: true
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 404
+    - type: http
+      method: GET
+      url: {{.target_site}}/package-lock.json
+      skip_body: true
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 404
+- name: Validate-SecurityTXT-File-Presence   
+  steps:     
+    - type: http
+      method: GET
+      url: {{.target_site}}/security.txt
+      skip_body: false
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 200
+        - result.body ShouldContainSubstring mailto:emergency@excellium-services.com
+- name: Validate-WAF-Presence   
+  steps:     
+    - type: http
+      method: GET
+      # Add a URL parameter with a value that is expected to trigger a rejection by any WAF in place
+      url: {{.target_site}}/?xss-payload=%3Cscript%3Ealert(1)%3C/script%3E
+      skip_body: true
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldBeIn 401 403
+- name: Validate-Secure-Protocol-Usage
+  steps:     
+    - type: http
+      method: GET
+      url: {{.target_site | replace "https" "http"}}
+      skip_body: true
+      timeout: {{.connection_timeout}}
+      assertions:
+        - result.statuscode ShouldEqual 301
+        - result.headers.location ShouldNotBeNil
+        - result.headers.location ShouldContainSubstring {{.target_site}}         
