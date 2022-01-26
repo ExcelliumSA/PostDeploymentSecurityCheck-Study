@@ -110,6 +110,19 @@ validate_robotstxt_file_content () {
     return $disallow_clauses
 }
 
+validate_directory_listing_enabling_status () {
+    # Made a request to directly to a folder to very the directly listing status
+    rc=$(curl -A "$USER_AGENT" -sk -o /dev/null -w '%{http_code}' "$APP_BASE_URL/static/")
+    if [ $rc -ne 403 ];
+    then
+        echo "Directory listing is enabled."
+        return 1
+    else
+        echo "Directory listing is not enabled."
+        return 0
+    fi
+}
+
 cleanup () {
     rm /tmp/venom* 2>/dev/null
     rm /tmp/buffer.txt 2>/dev/null
@@ -121,7 +134,7 @@ cleanup () {
 
 
 # Main processing - Execute all validation functions in sequence
-security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence" "validate_waf_presence" "validate_robotstxt_file_content")
+security_functions=("validate_http_security_response_headers" "validate_secure_protocol_usage" "validate_tls_configuration" "validate_exposed_content" "validate_securitytxt_file_presence" "validate_waf_presence" "validate_robotstxt_file_content" "validate_directory_listing_enabling_status")
 for security_function in ${security_functions[@]}; do
     echo -e "\e[94m[+] Execute '$security_function'\e[0m"
     $security_function

@@ -12,7 +12,7 @@ express()
     .get("/", (req, res) => res.send("It works."))
     //Simulate an AXIS2 admin module enabled with default credentials
     .post("/axis2-admin/login", (req, res) => res.send("<h1>Welcome to Axis2 Web Admin Module !!</h1>"))
-    //Provide a service to will raise an error if the parameter "name" is not provided
+    //Provide a service to raise an error if the parameter "name" is not provided
     .get("/hello", (req, res) => {
         let x = req.query.name;
         x = x.substring(5);
