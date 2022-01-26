@@ -6,7 +6,7 @@ Contains the materials used for the blog post about possible validation after a 
 
 # Status
 
-Work in progress
+Work in progress...
 
 # Blog post link
 
@@ -14,9 +14,11 @@ TODO
 
 # Lab
 
+> The NodeJS sample app is deployed, at each commit on the **main** branch, on a [Heroku](https://www.heroku.com/) platform instance located on https://xlm-blogpost-deploy-check.herokuapp.com
+
 The folder **app** contain the NodeJS sample application against all post-deployment validation are applied.
 
-Use the command below to start the app - it will be accessible on `http://localhost:5000` :
+Use the command below to start the app - it will be accessible on http://localhost:5000 :
 
 ```bash
 $ cd app
