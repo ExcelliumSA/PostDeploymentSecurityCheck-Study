@@ -20,7 +20,7 @@ jobs:
           appdir: app
           healthcheck: ${{secrets.HEROKU_APP_BASE_URL}}
       - name: Install deployment validations dependencies
-        run: sudo apt -y install aha curl wget python3 jq git
+        run: sudo apt update; sudo apt -y install aha curl wget python3 jq git
       - name: Apply post deployment validations
         run: |
           bash validate.sh "${{secrets.HEROKU_APP_BASE_URL}}" | aha > docs/index.html
