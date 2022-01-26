@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/ExcelliumSA/PostDeploymentSecurityCheck-Study",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "serve-index": "^1.9.1"
   }
 }
