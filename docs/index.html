@@ -69,9 +69,9 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 
 <span style="font-weight:bold;">Testing all IPv4 addresses (port 443): </span>46.137.15.86 54.220.192.176 54.73.53.134
 -----------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-26 08:06:05        --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2022-01-26 09:01:19        --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
- Further IP addresses:   54.73.53.134 54.220.192.176 
+ Further IP addresses:   54.220.192.176 54.73.53.134 
  rDNS (46.137.15.86):    ec2-46-137-15-86.eu-west-1.compute.amazonaws.com.
  Service detected:       HTTP
 
@@ -123,12 +123,12 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
 
 
-<span style="color:white;background-color:black;"> Done 2022-01-26 08:06:48 [  46s] --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2022-01-26 09:02:02 [  45s] --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
 -----------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-26 08:06:49        --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2022-01-26 09:02:03        --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
- Further IP addresses:   54.73.53.134 46.137.15.86 
+ Further IP addresses:   46.137.15.86 54.73.53.134 
  rDNS (54.220.192.176):  ec2-54-220-192-176.eu-west-1.compute.amazonaws.com.
  Service detected:       HTTP
 
@@ -180,12 +180,12 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
 
 
-<span style="color:white;background-color:black;"> Done 2022-01-26 08:07:34 [  91s] --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2022-01-26 09:02:47 [  90s] --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
 -----------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-26 08:07:34        --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2022-01-26 09:02:47        --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
- Further IP addresses:   54.220.192.176 46.137.15.86 
+ Further IP addresses:   46.137.15.86 54.220.192.176 
  rDNS (54.73.53.134):    ec2-54-73-53-134.eu-west-1.compute.amazonaws.com.
  Service detected:       HTTP
 
@@ -237,7 +237,7 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
 
 
-<span style="color:white;background-color:black;"> Done 2022-01-26 08:08:19 [ 137s] --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2022-01-26 09:03:32 [ 135s] --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
 -----------------------------------------------------
 <span style="font-weight:bold;">Done testing now all IP addresses (on port 443): </span>46.137.15.86 54.220.192.176 54.73.53.134
@@ -254,7 +254,7 @@ File is present (0 = no): 1
 <span style="filter: contrast(70%) brightness(190%);color:blue;">[+] Execute 'validate_waf_presence'</span>
 WAF is present (1 = no): 1
 <span style="filter: contrast(70%) brightness(190%);color:blue;">[+] Execute 'validate_robotstxt_file_content'</span>
-Disallow clause present 2 times
+Disallow clause present 2 times (expected 0 time)
 <span style="filter: contrast(70%) brightness(190%);color:blue;">[+] Execute 'validate_directory_listing_enabling_status'</span>
 Directory listing is enabled.
 <span style="filter: contrast(70%) brightness(190%);color:blue;">[+] Cleanup</span>
