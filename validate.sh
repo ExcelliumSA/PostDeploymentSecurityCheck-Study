@@ -1,4 +1,6 @@
 #!/bin/bash
+# See link below for system packages installed and used by this script:
+# https://github.com/ExcelliumSA/PostDeploymentSecurityCheck-Study/blob/main/.github/workflows/deployment.yml#L23
 # Print a global state and fail only at the end
 failure=0
 # Prevent any debugging call to see the web hook url
@@ -106,7 +108,7 @@ validate_waf_presence () {
 
 validate_robotstxt_file_content () {
     disallow_clauses=$(curl -A "$USER_AGENT" -L -sk $APP_BASE_URL/robots.txt | grep -iFc "Disallow:")
-    echo "Disallow clause present $disallow_clauses times"
+    echo "Disallow clause present $disallow_clauses times (expected 0 time)"
     return $disallow_clauses
 }
 
