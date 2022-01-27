@@ -34,13 +34,13 @@ def validate_cookies(cookies_collection):
                     print(
                         f"Cookie '{cookie_name}' do not have the 'HttpOnly' attribute defined.")
                     issue_detected = True
-                if key == "samesite" and value not in ["strict", "lax"]:
+                if key == "samesite" and value.lower() not in ["strict", "lax"]:
                     if len(value) == 0:
                         print(
                             f"Cookie '{cookie_name}' do not have the 'SameSite' attribute defined.")
                     else:
                         print(
-                            f"Cookie '{cookie_name}' do not have the 'SameSite' attribute securely defined (value set to '{value}').")
+                            f"Cookie '{cookie_name}' do not have the 'SameSite' attribute insecurely defined (value set to '{value}').")
                     issue_detected = True
     return issue_detected
 

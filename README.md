@@ -35,8 +35,11 @@ Listening on 5000
 * File **[validate.sh](validate.sh)**: Shell script of a POC containing all post deployment security validations proposed in the blog post. It is executed by this [workflow](.github/workflows/deployment.yml).
 * File **[recipe.yml](recipe.yml)**: *[venom](https://github.com/ovh/venom)* test plan to demonstrate a migration from a shell script to a descriptive test plan of the shell script above.
 * File **[content_excluded_from_deployment.txt](content_excluded_from_deployment.txt)**: Dictionary of file not expected to be present on the deployed application and used by *[validate.sh](validate.sh)* shell script.
+* File **[validate_cookie_properties.py](validate_cookie_properties.py)**: Python3 script performing validation on the cookies present in a HTTP response.
 
 # References
 
 * https://github.com/ovh/venom/issues/494
+* https://github.com/ovh/venom/issues/499
+* https://github.com/projectdiscovery/nuclei/issues/1542
 
