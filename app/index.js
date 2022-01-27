@@ -7,7 +7,26 @@ express()
     //Access to static file to simulate exposure of unexpected content (not expected to be deployed)
     .use(express.static(path.join(__dirname, "assets")))
     //Simulate a directory listing enabled on path "/static"
-    .use("/static", express.static("resources"), serveIndex("resources", {"icons": true}))
+    .use("/static", express.static("resources"), serveIndex("resources", {
+        "icons": true
+    }))
+    //Simulate cookies issuing
+    .get("/start", (req, res) => {
+        let optionsInsecure = {
+            maxAge: 1000 * 60 * 15,
+            httpOnly: false,
+            sameSite: "None"
+        }
+        let optionsSecure = {
+            maxAge: 1000 * 60 * 15,
+            httpOnly: true,
+            secure: true,
+            sameSite: "Strict"
+        }
+        res.cookie("Cookie1", "Value1", optionsInsecure)
+        res.cookie("Cookie2", "Value2", optionsSecure)
+        res.send("Cookies issued")
+    })
     //Home
     .get("/", (req, res) => res.send("It works."))
     //Simulate an AXIS2 admin module enabled with default credentials
