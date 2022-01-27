@@ -67,66 +67,9 @@ Testcase &quot;X-Xss-Protection&quot;, step #0: Assertion &quot;result.headers.x
 Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="filter: contrast(70%) brightness(190%);color:blue;">[+] Execute 'validate_tls_configuration'</span>
 
-<span style="font-weight:bold;">Testing all IPv4 addresses (port 443): </span>54.220.192.176 54.73.53.134 46.137.15.86
+<span style="font-weight:bold;">Testing all IPv4 addresses (port 443): </span>54.73.53.134 54.220.192.176 46.137.15.86
 -----------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-26 16:04:30        --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
-
- Further IP addresses:   46.137.15.86 54.73.53.134 
- rDNS (54.220.192.176):  ec2-54-220-192-176.eu-west-1.compute.amazonaws.com.
- Service detected:       HTTP
-
-
-<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing protocols </span><span style="text-decoration:underline;">via sockets except NPN+ALPN </span>
-
-<span style="font-weight:bold;"> SSLv2      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> SSLv3      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> TLS 1      </span>not offered
-<span style="font-weight:bold;"> TLS 1.1    </span>not offered
-<span style="font-weight:bold;"> TLS 1.2    </span><span style="font-weight:bold;color:green;">offered (OK)</span>
-<span style="font-weight:bold;"> TLS 1.3    </span>not offered and downgraded to a weaker protocol
-<span style="font-weight:bold;"> NPN/SPDY   </span>not offered
-<span style="font-weight:bold;"> ALPN/HTTP2 </span>not offered
-
-<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing cipher categories </span>
-
-<span style="font-weight:bold;"> NULL ciphers (no encryption)                      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> Anonymous NULL Ciphers (no authentication)        </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> Export ciphers (w/o ADH+NULL)                     </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> LOW: 64 Bit + DES, RC[2,4], MD5 (w/o export)      </span><span style="color:green;">not offered (OK)</span>
-<span style="font-weight:bold;"> Triple DES Ciphers / IDEA                         </span>not offered
-<span style="font-weight:bold;"> Obsoleted CBC ciphers (AES, ARIA etc.)            </span><span style="font-weight:bold;color:olive;">offered</span>
-<span style="font-weight:bold;"> Strong encryption (AEAD ciphers) with no FS       </span><span style="color:green;">offered (OK)</span>
-<span style="font-weight:bold;"> Forward Secrecy strong encryption (AEAD ciphers)  </span><span style="font-weight:bold;color:green;">offered (OK)</span>
-
-
-<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing vulnerabilities </span>
-
-<span style="font-weight:bold;"> Heartbleed</span> (CVE-2014-0160)                <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no heartbeat extension
-<span style="font-weight:bold;"> CCS</span> (CVE-2014-0224)                       <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> Ticketbleed</span> (CVE-2016-9244), experiment.  <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, reply empty
-<span style="font-weight:bold;"> ROBOT                                     </span><span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> Secure Renegotiation (RFC 5746)           </span><span style="font-weight:bold;color:green;">supported (OK)</span>
-<span style="font-weight:bold;"> Secure Client-Initiated Renegotiation     </span><span style="color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> CRIME, TLS </span>(CVE-2012-4929)                <span style="color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> BREACH</span> (CVE-2013-3587)                    <span style="color:green;">no gzip/deflate/compress/br HTTP compression (OK) </span> - only supplied &quot;/&quot; tested
-<span style="font-weight:bold;"> POODLE, SSL</span> (CVE-2014-3566)               <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no SSLv3 support
-<span style="font-weight:bold;"> TLS_FALLBACK_SCSV</span> (RFC 7507)              <span style="color:green;">No fallback possible (OK)</span>, no protocol below TLS 1.2 offered
-<span style="font-weight:bold;"> SWEET32</span> (CVE-2016-2183, CVE-2016-6329)    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> FREAK</span> (CVE-2015-0204)                     <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
-<span style="font-weight:bold;"> DROWN</span> (CVE-2016-0800, CVE-2016-0703)      <span style="font-weight:bold;color:green;">not vulnerable on this host and port (OK)</span>
-                                           make sure you don't use this certificate elsewhere with SSLv2 enabled services
-                                           https://censys.io/ipv4?q=968E97A3C84D9007C9D14F037F84EE527802F36324A73D985B5AB8C738A3899E could help you to find out
-<span style="font-weight:bold;"> LOGJAM</span> (CVE-2015-4000), experimental      <span style="color:green;">not vulnerable (OK):</span> no DH EXPORT ciphers, no DH key detected with &lt;= TLS 1.2
-<span style="font-weight:bold;"> BEAST</span> (CVE-2011-3389)                     <span style="color:green;">not vulnerable (OK)</span>, no SSL3 or TLS1
-<span style="font-weight:bold;"> LUCKY13</span> (CVE-2013-0169), experimental     potentially <span style="font-weight:bold;color:olive;">VULNERABLE</span>, uses cipher block chaining (CBC) ciphers with TLS. Check patches
-<span style="font-weight:bold;"> Winshock</span> (CVE-2014-6321), experimental    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span> - CAMELLIA or ECDHE_RSA GCM ciphers found
-<span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
-
-
-<span style="color:white;background-color:black;"> Done 2022-01-26 16:06:09 [ 102s] --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
-
------------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-26 16:06:09        --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2022-01-27 08:37:07        --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
  Further IP addresses:   46.137.15.86 54.220.192.176 
  rDNS (54.73.53.134):    ec2-54-73-53-134.eu-west-1.compute.amazonaws.com.
@@ -180,12 +123,69 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
 
 
-<span style="color:white;background-color:black;"> Done 2022-01-26 16:07:48 [ 201s] --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2022-01-27 08:37:51 [  47s] --&gt;&gt; 54.73.53.134:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
 -----------------------------------------------------
-<span style="color:white;background-color:black;"> Start 2022-01-26 16:07:48        --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Start 2022-01-27 08:37:51        --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
- Further IP addresses:   54.73.53.134 54.220.192.176 
+ Further IP addresses:   46.137.15.86 54.73.53.134 
+ rDNS (54.220.192.176):  ec2-54-220-192-176.eu-west-1.compute.amazonaws.com.
+ Service detected:       HTTP
+
+
+<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing protocols </span><span style="text-decoration:underline;">via sockets except NPN+ALPN </span>
+
+<span style="font-weight:bold;"> SSLv2      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> SSLv3      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> TLS 1      </span>not offered
+<span style="font-weight:bold;"> TLS 1.1    </span>not offered
+<span style="font-weight:bold;"> TLS 1.2    </span><span style="font-weight:bold;color:green;">offered (OK)</span>
+<span style="font-weight:bold;"> TLS 1.3    </span>not offered and downgraded to a weaker protocol
+<span style="font-weight:bold;"> NPN/SPDY   </span>not offered
+<span style="font-weight:bold;"> ALPN/HTTP2 </span>not offered
+
+<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing cipher categories </span>
+
+<span style="font-weight:bold;"> NULL ciphers (no encryption)                      </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> Anonymous NULL Ciphers (no authentication)        </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> Export ciphers (w/o ADH+NULL)                     </span><span style="font-weight:bold;color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> LOW: 64 Bit + DES, RC[2,4], MD5 (w/o export)      </span><span style="color:green;">not offered (OK)</span>
+<span style="font-weight:bold;"> Triple DES Ciphers / IDEA                         </span>not offered
+<span style="font-weight:bold;"> Obsoleted CBC ciphers (AES, ARIA etc.)            </span><span style="font-weight:bold;color:olive;">offered</span>
+<span style="font-weight:bold;"> Strong encryption (AEAD ciphers) with no FS       </span><span style="color:green;">offered (OK)</span>
+<span style="font-weight:bold;"> Forward Secrecy strong encryption (AEAD ciphers)  </span><span style="font-weight:bold;color:green;">offered (OK)</span>
+
+
+<span style="font-weight:bold;"></span><span style="text-decoration:underline;font-weight:bold;"> Testing vulnerabilities </span>
+
+<span style="font-weight:bold;"> Heartbleed</span> (CVE-2014-0160)                <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no heartbeat extension
+<span style="font-weight:bold;"> CCS</span> (CVE-2014-0224)                       <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> Ticketbleed</span> (CVE-2016-9244), experiment.  <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, reply empty
+<span style="font-weight:bold;"> ROBOT                                     </span><span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> Secure Renegotiation (RFC 5746)           </span><span style="font-weight:bold;color:green;">supported (OK)</span>
+<span style="font-weight:bold;"> Secure Client-Initiated Renegotiation     </span><span style="color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> CRIME, TLS </span>(CVE-2012-4929)                <span style="color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> BREACH</span> (CVE-2013-3587)                    <span style="color:green;">no gzip/deflate/compress/br HTTP compression (OK) </span> - only supplied &quot;/&quot; tested
+<span style="font-weight:bold;"> POODLE, SSL</span> (CVE-2014-3566)               <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>, no SSLv3 support
+<span style="font-weight:bold;"> TLS_FALLBACK_SCSV</span> (RFC 7507)              <span style="color:green;">No fallback possible (OK)</span>, no protocol below TLS 1.2 offered
+<span style="font-weight:bold;"> SWEET32</span> (CVE-2016-2183, CVE-2016-6329)    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> FREAK</span> (CVE-2015-0204)                     <span style="font-weight:bold;color:green;">not vulnerable (OK)</span>
+<span style="font-weight:bold;"> DROWN</span> (CVE-2016-0800, CVE-2016-0703)      <span style="font-weight:bold;color:green;">not vulnerable on this host and port (OK)</span>
+                                           make sure you don't use this certificate elsewhere with SSLv2 enabled services
+                                           https://censys.io/ipv4?q=968E97A3C84D9007C9D14F037F84EE527802F36324A73D985B5AB8C738A3899E could help you to find out
+<span style="font-weight:bold;"> LOGJAM</span> (CVE-2015-4000), experimental      <span style="color:green;">not vulnerable (OK):</span> no DH EXPORT ciphers, no DH key detected with &lt;= TLS 1.2
+<span style="font-weight:bold;"> BEAST</span> (CVE-2011-3389)                     <span style="color:green;">not vulnerable (OK)</span>, no SSL3 or TLS1
+<span style="font-weight:bold;"> LUCKY13</span> (CVE-2013-0169), experimental     potentially <span style="font-weight:bold;color:olive;">VULNERABLE</span>, uses cipher block chaining (CBC) ciphers with TLS. Check patches
+<span style="font-weight:bold;"> Winshock</span> (CVE-2014-6321), experimental    <span style="font-weight:bold;color:green;">not vulnerable (OK)</span> - CAMELLIA or ECDHE_RSA GCM ciphers found
+<span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
+
+
+<span style="color:white;background-color:black;"> Done 2022-01-27 08:38:35 [  91s] --&gt;&gt; 54.220.192.176:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+
+-----------------------------------------------------
+<span style="color:white;background-color:black;"> Start 2022-01-27 08:38:35        --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+
+ Further IP addresses:   54.220.192.176 54.73.53.134 
  rDNS (46.137.15.86):    ec2-46-137-15-86.eu-west-1.compute.amazonaws.com.
  Service detected:       HTTP
 
@@ -237,10 +237,10 @@ Permanent redirection to a HTTPS protocol is NOT in place.
 <span style="font-weight:bold;"> RC4</span> (CVE-2013-2566, CVE-2015-2808)        <span style="color:green;">no RC4 ciphers detected (OK)</span>
 
 
-<span style="color:white;background-color:black;"> Done 2022-01-26 16:09:29 [ 302s] --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
+<span style="color:white;background-color:black;"> Done 2022-01-27 08:39:19 [ 135s] --&gt;&gt; 46.137.15.86:443 (xlm-blogpost-deploy-check.herokuapp.com) &lt;&lt;--</span>
 
 -----------------------------------------------------
-<span style="font-weight:bold;">Done testing now all IP addresses (on port 443): </span>54.220.192.176 54.73.53.134 46.137.15.86
+<span style="font-weight:bold;">Done testing now all IP addresses (on port 443): </span>54.73.53.134 54.220.192.176 46.137.15.86
 
 6 issue(s) found.
 <span style="filter: contrast(70%) brightness(190%);color:blue;">[+] Execute 'validate_exposed_content'</span>
