@@ -4,13 +4,9 @@
 
 Contains the materials used for the blog post about possible validation after a web app deployment.
 
-# Status
-
-Work in progress...
-
 # Blog post link
 
-TODO
+https://excellium-services.com/2022/05/09/continuous-deployment-applying-security-for-web-application-development/
 
 # Lab
 
