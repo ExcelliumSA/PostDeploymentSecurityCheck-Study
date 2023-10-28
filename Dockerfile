@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.18.3
 # Install needed system packages required by tools
 RUN apk update && apk upgrade && apk add --no-cache aha bash coreutils curl drill git go libidn jq openssl procps python3 py3-pip socat xxd
 # Define system non-root user
